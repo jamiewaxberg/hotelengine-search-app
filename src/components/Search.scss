@@ -1,0 +1,51 @@
+.searchFieldWrapper {
+  width: 100%;
+  display: flex;
+
+  input,
+  button {
+    font-size: 16px;
+  }
+
+  input {
+    flex-grow: 10;
+    padding: 5px 10px;
+  }
+
+  button {
+    flex-grow: 2;
+    background: #bee4be;
+    cursor: pointer;
+
+    &:hover {
+      background: darken(#bee4be, 10)
+    }
+  }
+}
+
+.searchResultsWrapper {
+  display: table;
+  margin-top: 1em;
+}
+
+.resultRow {
+  display: table-row;
+
+  div {
+    display: table-cell;
+    padding: 1em;
+    border: 1px solid #ccc;
+  }
+
+  &.headers {
+    display: none;
+
+    &.show {
+      display: table-row;
+
+      div {
+        font-weight: bold;
+      }
+    }
+  }
+}
