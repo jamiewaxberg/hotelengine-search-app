@@ -7,7 +7,7 @@
     font-size: 16px;
   }
 
-  input {
+  input[type="text"] {
     flex-grow: 10;
     padding: 5px 10px;
   }
@@ -23,29 +23,17 @@
   }
 }
 
-.searchResultsWrapper {
-  display: table;
-  margin-top: 1em;
-}
-
-.resultRow {
-  display: table-row;
-
-  div {
-    display: table-cell;
-    padding: 1em;
-    border: 1px solid #ccc;
+.filters {
+  padding: 1em 0;
+  .sortBy {
+    margin-right: 5px;
   }
 
-  &.headers {
-    display: none;
+  label {
+    cursor: pointer;
+  }
 
-    &.show {
-      display: table-row;
-
-      div {
-        font-weight: bold;
-      }
-    }
+  input {
+    margin: 0 0.5em 0 1em;
   }
 }
