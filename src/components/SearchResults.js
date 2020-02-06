@@ -10,7 +10,7 @@ function SearchResults(props) {
                 <div>Stars</div>
                 <div>Owner</div>
                 <div>Language</div>
-                <div>Score</div>
+                <div>Relevance Score</div>
             </div>
             {repos ? repos.map(repo => {
                     const {

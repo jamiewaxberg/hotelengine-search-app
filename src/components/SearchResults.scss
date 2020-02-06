@@ -1,6 +1,7 @@
 .searchResultsWrapper {
   display: table;
   margin-top: 1em;
+  border: 1px solid $mid-gray;
 }
 
 .resultRow {
@@ -9,7 +10,24 @@
   div {
     display: table-cell;
     padding: 1em;
-    border: 1px solid #ccc;
+    border-bottom: 1px solid $mid-gray;
+    border-right: 1px solid $mid-gray;
+
+    &:last-of-type {
+      border-right: none;
+    }
+  }
+
+  &:last-of-type div {
+    border-bottom: none;
+  }
+
+  &:nth-of-type(even) {
+    background: $white;
+  }
+
+  &:nth-of-type(odd) {
+    background: #f6f6f6;
   }
 
   &.headers {

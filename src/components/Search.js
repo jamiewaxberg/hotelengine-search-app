@@ -9,7 +9,7 @@ class Search extends Component{
         this.state = {
             value: '',
             githubData: {},
-            filterBy: null
+            filterBy: 'score'
         };
         this.queryApi = this.queryApi.bind(this);
         this.handleChange = this.handleChange.bind(this);
@@ -43,13 +43,13 @@ class Search extends Component{
             <Fragment>
                 <div>
                     <div className="searchFieldWrapper">
-                        <input type="text" className="searchField" value={this.state.value} onChange={(e) => this.handleChange(e)} />
+                        <input type="text" className="searchField" value={this.state.value} onChange={(e) => this.handleChange(e)} placeholder="Type your GitHub search query here" />
                         <button onClick={this.handleSearch}>Search</button>
                     </div>
                     <div className="filters">
-                        <span className="sortBy">Sort by:</span>
-                        <label value="Relevance" onClick={() => this.handleFilter('score')}><input type="radio" name="sortBy" value="Relevance" />Relevance</label>
-                        <label value="Stars" onClick={() => this.handleFilter('stars')}><input type="radio" name="sortBy" value="Stars" value="Stars" />Stars</label>
+                        <span className="sortBy">Sort by</span>
+                        <label value="Relevance" className={this.state.filterBy === 'score' ? 'active' : 'inactive'} onClick={() => this.handleFilter('score')}><input type="radio" name="sortBy" value="Relevance" defaultChecked/>Relevance</label>
+                        <label value="Stars" className={this.state.filterBy === 'stars' ? 'active' : 'inactive'}  onClick={() => this.handleFilter('stars')}><input type="radio" name="sortBy" value="Stars" />Stars</label>
                     </div>
                 </div>
                 <SearchResults repos={this.state.githubData.items ? this.state.githubData.items : null} />

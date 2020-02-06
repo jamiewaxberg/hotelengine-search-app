@@ -1,3 +1,4 @@
+
 .searchFieldWrapper {
   width: 100%;
   display: flex;
@@ -5,35 +6,51 @@
   input,
   button {
     font-size: 16px;
+    color: $font-color;
+    font-family: $font-family;
   }
 
   input[type="text"] {
     flex-grow: 10;
-    padding: 5px 10px;
+    padding: 1em 1.5em;
+    border: none;
   }
 
   button {
     flex-grow: 2;
-    background: #bee4be;
+    background: $button-color;
     cursor: pointer;
+    border: none;
+    font-size: 1.1em;
 
     &:hover {
-      background: darken(#bee4be, 10)
+      background: darken($button-color, 5)
     }
   }
 }
 
 .filters {
   padding: 1em 0;
+  margin: 1em 0;
+
   .sortBy {
-    margin-right: 5px;
+    margin: 0 0.5em 0 1.5em;
   }
 
   label {
     cursor: pointer;
+    padding: 0.75em;
+    background: $white;
+
+    &.active {
+      background: lighten($button-color, 5);
+    }
+
   }
 
   input {
-    margin: 0 0.5em 0 1em;
+    visibility: hidden;
+    width: 0;
+    height: 0;
   }
 }
